@@ -13,12 +13,16 @@ class Square extends React.Component {
         }
     }
     //now, with every square rendered via the board component, there is an empty memory "bin"
-    
+
 	render() {
-		return <button className='square' onClick={() => 
-        console.log("click!")}>
-            {this.props.value}
-        </button>;
+		return (
+        <button 
+            className='square' 
+            onClick={() => 
+            this.setState({value: 'X'})}>
+        {this.state.value}
+        </button>
+        );
 	}
 }
 
