@@ -4,6 +4,16 @@ import "./index.css";
 
 
 class Square extends React.Component {
+    //give each square memory but leveraging state. Using this.state in a constructor is a way to keep the memories private to the react component it's define in
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: null,
+        }
+    }
+    //now, with every square rendered via the board component, there is an empty memory "bin"
+    
 	render() {
 		return <button className='square' onClick={() => 
         console.log("click!")}>
