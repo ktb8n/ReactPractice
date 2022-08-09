@@ -25,6 +25,7 @@ class Square extends React.Component {
         );
 	}
 }
+//by using this.setState from an onClick handler in the square's render mthod, we tell react to re-render that square whenever button is clicked
 
 class Board extends React.Component {
 	renderSquare(i) {
