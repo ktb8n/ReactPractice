@@ -2,21 +2,29 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-
-class Square extends React.Component {
-    //now, with every square rendered via the board component, there is an empty memory "bin"
-
-	render() {
-		return (
-        <button 
-            className='square' 
-            onClick={() => 
-            this.props.onClick()}>
-        {this.props.value}
-        </button>
-        );
-	}
+function Square(props){
+	return(
+		<button className="square" onClick={props.onClick}>
+			{props.value}
+		</button>
+	)
 }
+
+// BELOW IS A CLASS COMPONENT. This was replaced for the above functional component
+// class Square extends React.Component {
+//     //now, with every square rendered via the board component, there is an empty memory "bin"
+
+// 	render() {
+// 		return (
+//         <button 
+//             className='square' 
+//             onClick={() => 
+//             this.props.onClick()}>
+//         {this.props.value}
+//         </button>
+//         );
+// 	}
+// }
 
 class Board extends React.Component {
 	constructor(props) {
