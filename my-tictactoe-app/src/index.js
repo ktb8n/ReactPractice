@@ -28,8 +28,16 @@ class Square extends React.Component {
 //by using this.setState from an onClick handler in the square's render method, we tell react to re-render that square whenever button is clicked
 
 class Board extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			squares: Array(9).fill(null),
+		};
+
+	}
+
 	renderSquare(i) {
-		return <Square value={i}  />;
+		return <Square value={this.state.squares[i]}  />;
 	}
 
 	render() {
