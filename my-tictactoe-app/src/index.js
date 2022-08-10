@@ -4,14 +4,6 @@ import "./index.css";
 
 
 class Square extends React.Component {
-    //give each square memory but leveraging state. Using this.state in a constructor is a way to keep the memories private to the react component it's defined in
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: null,
-        }
-    }
     //now, with every square rendered via the board component, there is an empty memory "bin"
 
 	render() {
@@ -19,13 +11,12 @@ class Square extends React.Component {
         <button 
             className='square' 
             onClick={() => 
-            this.setState({value: 'X'})}>
-        {this.state.value}
+            this.props.onClick({value: 'X'})}>
+        {this.props.value}
         </button>
         );
 	}
 }
-//by using this.setState from an onClick handler in the square's render method, we tell react to re-render that square whenever button is clicked
 
 class Board extends React.Component {
 	constructor(props) {
