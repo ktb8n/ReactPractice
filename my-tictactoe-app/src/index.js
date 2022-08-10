@@ -4,7 +4,7 @@ import "./index.css";
 
 
 class Square extends React.Component {
-    //give each square memory but leveraging state. Using this.state in a constructor is a way to keep the memories private to the react component it's define in
+    //give each square memory but leveraging state. Using this.state in a constructor is a way to keep the memories private to the react component it's defined in
 
     constructor(props) {
         super(props);
@@ -25,7 +25,7 @@ class Square extends React.Component {
         );
 	}
 }
-//by using this.setState from an onClick handler in the square's render mthod, we tell react to re-render that square whenever button is clicked
+//by using this.setState from an onClick handler in the square's render method, we tell react to re-render that square whenever button is clicked
 
 class Board extends React.Component {
 	renderSquare(i) {
