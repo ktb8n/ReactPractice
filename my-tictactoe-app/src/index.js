@@ -36,7 +36,12 @@ class Board extends React.Component {
 	}
 
 	handleClick(i) {
+		//this function bumps us out of the clickable portion of the code, rendering the user unable to continue playing once there is a winner
 		const squares = this.state.squares.slice();
+		if(calculateWinner(squares) || squares[i] ){
+			return;
+		}
+
 		squares[i] = this.state.xIsNext ? "X" : "O";
 		this.setState({
 			squares: squares,
